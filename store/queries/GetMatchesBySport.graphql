@@ -1,0 +1,17 @@
+query GetMatchesBySport($sportSlug: String!, $date: String!) {
+    Matches(sportSlug: $sportSlug, date: $date) {
+        result_score
+        slug
+        sport_slug
+        match_date
+        unique_tournament {
+            name
+            slug
+            logo
+        }
+        teams {
+            name
+            logo
+        }
+    }
+}

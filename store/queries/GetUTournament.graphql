@@ -1,0 +1,44 @@
+query GetUTournament($tournamentSlug: String!, $sportSlug: String!) {
+    UTournament(slug: $tournamentSlug, sportSlug: $sportSlug) {
+        name
+        slug
+        upcoming_matches {
+            match_date
+            slug
+            sport_slug
+            teams {
+                name
+                logo
+            }
+            unique_tournament {
+                slug
+            }
+        }
+        past_matches {
+            match_date
+            slug
+            result_score
+            sport_slug
+            teams {
+                name
+                logo
+            }
+            unique_tournament {
+                slug
+            }
+        }
+        standings {
+            league_table_name
+            position_total
+            points_total
+            matches_total
+            win_total
+            draw_total
+            loss_total
+            team {
+                name
+                logo
+            }
+        }
+    }
+}

@@ -1,0 +1,39 @@
+query GetMatch($slug: String!) {
+    Match(slug: $slug) {
+        result_score
+        sport_slug
+        match_date
+        unique_tournament {
+            name
+            slug
+            logo
+        }
+        teams {
+            name
+            logo
+            country {
+                name
+            }
+            lineups {
+                start {
+                    name
+                    shirt_number
+                    logo
+                }
+                reserve {
+                    name
+                    shirt_number
+                    logo
+                }
+            }
+        }
+        join_matches {
+            match_date
+            result_score
+            teams {
+                name
+                logo
+            }
+        }
+    }
+}
